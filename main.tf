@@ -7,6 +7,7 @@ module "network" {
     subnet_cidr_offset  = var.subnet_cidr_offset
 }
 
+/*
 module "app" {
     source              = "./modules/app"
 
@@ -23,3 +24,4 @@ module "app" {
     subnet_ocid         = module.network.web_subnet_ocid
     image_ocid          = var.web_image_ocid
 }
+*/
