@@ -7,6 +7,15 @@ module "network" {
     subnet_cidr_offset  = var.subnet_cidr_offset
 }
 
+module "resource-manager" {
+    source              = "./modules/resource-manager"
+
+    compartment_ocid    = var.compartment_ocid
+    vcn_ocid            = module.network.vcn_ocid
+    subnet_ocid         = module.network.bastion_subnet_ocid
+    display_name        = "HA InnoDB RM Private endpoint"
+}
+
 /*
 module "app" {
     source              = "./modules/app"

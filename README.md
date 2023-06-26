@@ -23,3 +23,14 @@ oci compute image list -c $C --all --query 'data[*].{Name:"display-name",OCID:id
 | Oracle-Linux-9.1-2023.03.28-0         | ocid1.image.oc1.eu-stockholm-1.aaaaaaaaaozvprtafwubfaxavd7hwkquptkhuw2qrrvkwilef6ompjf2wwka |
 +---------------------------------------+---------------------------------------------------------------------------------------------+
 ```
+
+
+## Inspiration 
+
+https://github.com/oracle-quickstart/oci-crowdstrike/blob/main/sample-ansible
+
+Private Endpoint 
+https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/resourcemanager_private_endpoint
+
+IP of the private endpoint 
+https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/resourcemanager_private_endpoint_reachable_ip
