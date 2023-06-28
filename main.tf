@@ -1,36 +1,46 @@
 
-module "network" {
-    source              = "./modules/network"
+module "rm" {
+    source              = "./modules/rm"
 
     compartment_ocid    = var.compartment_ocid
-    vcn_cidr            = var.vcn_cidr
-    subnet_cidr_offset  = var.subnet_cidr_offset
-}
-
-module "resource-manager" {
-    source              = "./modules/resource-manager"
-
-    compartment_ocid    = var.compartment_ocid
-    vcn_ocid            = module.network.vcn_ocid
-    subnet_ocid         = module.network.bastion_subnet_ocid
+    vcn_ocid            = var.vcn_ocid
+    subnet_ocid         = var.bastion_subnet_ocid
     display_name        = "HA InnoDB RM Private endpoint"
 }
 
-/*
 module "app" {
     source              = "./modules/app"
 
-    instance_count      = 1  #  var.web_count
+    instance_count      = var.app_count
     compartment_ocid    = var.compartment_ocid
-    ssh_public_key      = var.ssh_public_key
+    ssh_public_key      = data.tls_public_key.ssh_public_key.public_key_openssh
     user_data_base64    = local.user_data_base64_standard
-    shape               = "VM.Standard.E4.Flex" # var.default_shape
-    ocpus               = "1" # var.web_ocpus
-    memory_in_gbs       = "16" # var.web_mem_per_ocpu * var.web_ocpus
+    shape               = var.default_shape
+    ocpus               = var.app_ocpus
+    memory_in_gbs       = var.app_mem_per_ocpu * var.app_ocpus
     avadom_name         = local.avadom_name
     faldom_list         = local.faldom_list
     faldom_count        = local.faldom_count
-    subnet_ocid         = module.network.web_subnet_ocid
-    image_ocid          = var.web_image_ocid
+    subnet_ocid         = var.app_subnet_ocid
+    image_ocid          = var.app_image_ocid
+    super_user          = var.super_user
+    config_file         = "${path.module}/config/inventory_app"
+    sshkey_file         = "${path.module}/config/ssh-key"
 }
-*/
+
+module "db" {
+    source              = "./modules/db"
+
+    instance_count      = var.db_count
+    compartment_ocid    = var.compartment_ocid
+    ssh_public_key      = data.tls_public_key.ssh_public_key.public_key_openssh
+    user_data_base64    = local.user_data_base64_standard
+    shape               = var.default_shape
+    ocpus               = var.db_ocpus
+    memory_in_gbs       = var.db_mem_per_ocpu * var.db_ocpus
+    avadom_name         = local.avadom_name
+    faldom_list         = local.faldom_list
+    faldom_count        = local.faldom_count
+    subnet_ocid         = var.db_subnet_ocid
+    image_ocid          = var.app_image_ocid
+}

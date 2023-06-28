@@ -11,6 +11,3 @@ variable "faldom_list"      {}
 variable "faldom_count"     {}
 variable "subnet_ocid"      {}
 variable "image_ocid"       {}
-variable "super_user"       {}
-variable "config_file"      {}
-variable "sshkey_file"      {}

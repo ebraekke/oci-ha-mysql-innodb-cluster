@@ -1,4 +1,43 @@
 
+## How to do this in ansible 
+
+https://docs.ansible.com/ansible/2.8/user_guide/playbooks_best_practices.html#directory-layout
+
+
+Can depend on one resource, ie DBS 
+
+https://blogs.oracle.com/cloudmarketplace/post/explore-ansible-within-oracle-resource-manager-host-to-configure-oci-resources
+
+https://github.com/oracle-quickstart/oci-crowdstrike/tree/main/sample-ansible
+
+Then execute like so, 
+
+```hcl
+
+resource "null_resource" "install_app_httpd" {
+  depends_on = [oci_core_instance.instace_app, ]
+
+  provisioner "local-exec" {
+    command = "chmod 400 ${local_file.private_key_file.filename}"
+  }
+
+  provisioner "local-exec" {
+    command = "ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i '${oci_core_instance.instance_db.0.private_ip},' ${var.playbook_path}"
+  }
+}
+```
+
+For example: 
+```
+export ANSIBLE_HOST_KEY_CHECKING=False 
+
+ansible-playbook -i localhost:9008 
+
+```
+
+## Manual
+
+
 Upgrade os (ol) 
 ```
 sudo yum update -y
@@ -237,15 +276,4 @@ grant all privileges on *.* to 'admin'@'%';
 flush privileges; 
 ```
 
-AND
 
-```sql
-create user 'admin'@'10.0.0.37'
-  identified by 'new password' 
-;
-
-grant all privileges on *.* to 'admin'@'10.0.0.37';
-
-flush privileges; 
-
-```

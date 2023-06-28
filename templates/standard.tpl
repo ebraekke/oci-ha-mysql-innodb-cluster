@@ -1,6 +1,6 @@
 #cloud-config
 
-package_upgrade: true
+package_upgrade: false
 
 packages:
   - python
@@ -8,3 +8,4 @@ packages:
 
 runcmd:
   - /usr/bin/timedatectl set-timezone Europe/Oslo
+  
