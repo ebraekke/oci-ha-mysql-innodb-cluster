@@ -32,6 +32,7 @@ data "template_file" "ssh_config" {
   vars = {
     private_key_path       = pathexpand(local_file.private_key_file.filename)
     destination_ssh_user   = "${var.super_user}"
-    destination_private_ip = "${module.db.db_private_ips[0]}"
+    destination_hostname   = "${module.app.app_hostname_labels[0]}"
+    destination_private_ip = "${module.app.app_private_ips[0]}"
   }
 }

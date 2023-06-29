@@ -33,6 +33,15 @@ resource "oci_core_instance" "instance_db" {
     assign_public_ip    = false
   }
 
+  agent_config {
+    are_all_plugins_disabled = false
+
+		plugins_config {
+			desired_state = "ENABLED"
+			name          = "Bastion"
+		}
+  }
+
   timeouts {
     create = "60m"
   }
