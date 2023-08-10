@@ -24,6 +24,19 @@ oci compute image list -c $C --all --query 'data[*].{Name:"display-name",OCID:id
 +---------------------------------------+---------------------------------------------------------------------------------------------+
 ```
 
+## Read config files to create Bastion Sessions 
+
+
+```powershell 
+fileContent = Get-Content .\README.md
+forEach ($compute_ocid in (Get-Content $fileContent)) {
+  echo $compute_ocid
+
+  ## Do this in a try-catch block for X minutes for each of the 
+  ## oci instance-agent plugin get -c $compartment_ocid --instanceagent-id $compute_ocid --plugin-name Bastion
+  
+}
+```
 
 ## Inspiration 
 
