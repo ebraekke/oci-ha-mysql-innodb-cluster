@@ -63,8 +63,25 @@ variable "default_shape"    {
 
 # Set to your pref depending on OS, assumes same OS family (i.e. opc or ubuntu) 
 variable "super_user"       { default = "opc" }
-variable "app_image_ocid"   {}
-variable "db_image_ocid"    {}
+
+variable "db_image_ocid_map" {
+  # 8.8
+  type = map
+  default = {
+    eu-frankfurt-1 = "ocid1.image.oc1.eu-frankfurt-1.aaaaaaaaxcekctvkxslfbfeojkawkejwep5skeqzvle7nbjekvctt4jetcua"
+    eu-stockholm-1 = "ocid1.image.oc1.eu-stockholm-1.aaaaaaaamanmmaerrmxfh45euvqgh5zqfmkxceffueeowcjmaxxmnwylv2iq"
+  }
+}
+
+variable "app_image_ocid_map" {
+  # 7.9
+  type = map
+  default = {
+    eu-frankfurt-1 = "ocid1.image.oc1.eu-frankfurt-1.aaaaaaaa334274wxgfcpoptphpte6f3xqbhyqz2db4b57ddar6b4m5kwoxga"
+    eu-stockholm-1 = "ocid1.image.oc1.eu-stockholm-1.aaaaaaaa5td46b4l7bghw45dnleto7jhu4nksmz6yffq45wo6xqwg5mgc6ja"
+  }
+}
+
 
 ###########################################################################
 # Details related to account/identity (local_provider.tf) and book keeping

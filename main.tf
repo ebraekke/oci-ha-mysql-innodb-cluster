@@ -1,4 +1,5 @@
 
+/*
 module "rm" {
     source              = "./modules/rm"
 
@@ -22,11 +23,12 @@ module "app" {
     faldom_list         = local.faldom_list
     faldom_count        = local.faldom_count
     subnet_ocid         = var.app_subnet_ocid
-    image_ocid          = var.app_image_ocid
+    image_ocid          = var.app_image_ocid_map[var.region]
     super_user          = var.super_user
     config_file         = "${path.module}/config/inventory_app"
     sshkey_file         = "${path.module}/config/ssh-key"
 }
+*/
 
 module "db" {
     source              = "./modules/db"
@@ -42,5 +44,5 @@ module "db" {
     faldom_list         = local.faldom_list
     faldom_count        = local.faldom_count
     subnet_ocid         = var.db_subnet_ocid
-    image_ocid          = var.app_image_ocid
+    image_ocid          = var.db_image_ocid_map[var.region]
 }

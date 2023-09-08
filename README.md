@@ -6,7 +6,7 @@ A pdf copy of the page can be found in the [doc folder](doc/Deploy-a-highly-avai
 
 ## Create
 
-terraform plan --out=ha.tfplan --var-file=config/vars_arn.tfvars
+terraform plan --out=ha.tfplan --var-file=config/vars_fra.tfvars
 
 terraform apply ...
 
@@ -16,12 +16,13 @@ terraform apply ...
 ```
 oci compute image list -c $C --all --query 'data[*].{Name:"display-name",OCID:id}' --output table
 <<
-+---------------------------------------+---------------------------------------------------------------------------------------------+
-| Name                                  | OCID                                                                                        |
-+---------------------------------------+---------------------------------------------------------------------------------------------+
-| Oracle-Linux-9.1-aarch64-2023.03.28-0 | ocid1.image.oc1.eu-stockholm-1.aaaaaaaajql7wwcojm5tsayta3vksyowaove3lvt4bpbkxid57xuctf3sq6q |
-| Oracle-Linux-9.1-2023.03.28-0         | ocid1.image.oc1.eu-stockholm-1.aaaaaaaaaozvprtafwubfaxavd7hwkquptkhuw2qrrvkwilef6ompjf2wwka |
-+---------------------------------------+---------------------------------------------------------------------------------------------+
++---------------------------------+---------------------------------------------------------------------------------------------+
+| Name                            | OCID                                                                                        |
++---------------------------------+---------------------------------------------------------------------------------------------+
+| Oracle-Linux-9.2-2023.08.31-0   | ocid1.image.oc1.eu-frankfurt-1.aaaaaaaae2zn7rxwjswrt2lzloa6agyj4ukg6inedeya4uhikauk2ugwspva |
+| Oracle-Linux-8.8-2023.08.31-0   | ocid1.image.oc1.eu-frankfurt-1.aaaaaaaapbmaii43g6f7aewzhubzhdrq5tl3xspw7wzwfgjn5zb7mbzoge4a |
+| Oracle-Linux-7.9-2023.08.31-0   | ocid1.image.oc1.eu-frankfurt-1.aaaaaaaazo5x3eg2yzwmdbuxcuftnkx47oirq3ruxux2lmspzok3j45flsrq |
++---------------------------------+---------------------------------------------------------------------------------------------+
 ```
 
 ## Read config files to create Bastion Sessions 

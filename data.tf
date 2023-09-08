@@ -26,6 +26,7 @@ data "tls_public_key" "ssh_public_key" {
 }
 
 
+/*
 # Create ssh config file
 data "template_file" "ssh_config" {
   template = file("${path.module}/templates/ssh_config.tpl")
@@ -36,3 +37,4 @@ data "template_file" "ssh_config" {
     destination_private_ip = "${module.app.app_private_ips[0]}"
   }
 }
+*/

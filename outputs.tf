@@ -3,9 +3,11 @@
 # OUTPUTs
 ###########################################################################
 
+/*
 output "rm_private_endpoint_ocid" {
   value = module.rm.rm_private_endpoint.id
 }
+*/ 
 
 # Yes want to export, show with terraform output -json ssh_public_key
 output "ssh_public_key" {
