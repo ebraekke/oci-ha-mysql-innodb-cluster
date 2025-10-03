@@ -47,7 +47,7 @@ module "db" {
     image_ocid          = var.db_image_ocid_map[var.region]
 }
 
-/*
+
 module "conn" {
     source              = "./modules/conn"
 
@@ -59,4 +59,4 @@ module "conn" {
     mysql_port		    = 3306
     priv_endpoint_ocid 	= var.priv_endpoint_ocid
 }
-*/
+
