@@ -47,7 +47,6 @@ module "db" {
     image_ocid          = var.db_image_ocid_map[var.region]
 }
 
-
 module "conn" {
     source              = "./modules/conn"
 
@@ -55,8 +54,7 @@ module "conn" {
     connection_name		= "dev-testmysqlconn"
     db_user_name		= "root"
     db_password_ocid	= var.password_ocid
-    mysql_ipaddress		= "127.0.0.1"
+    mysql_ipaddress		= module.db.db_private_ips[0]
     mysql_port		    = 3306
     priv_endpoint_ocid 	= var.priv_endpoint_ocid
 }
-
