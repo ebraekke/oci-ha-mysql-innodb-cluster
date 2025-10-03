@@ -46,3 +46,17 @@ module "db" {
     subnet_ocid         = var.db_subnet_ocid
     image_ocid          = var.db_image_ocid_map[var.region]
 }
+
+/*
+module "conn" {
+    source              = "./modules/conn"
+
+    compartment_ocid	= var.compartment_ocid
+    connection_name		= "dev-testmysqlconn"
+    db_user_name		= "root"
+    db_password_ocid	= var.password_ocid
+    mysql_ipaddress		= "127.0.0.1"
+    mysql_port		    = 3306
+    priv_endpoint_ocid 	= var.priv_endpoint_ocid
+}
+*/

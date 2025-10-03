@@ -1,5 +1,10 @@
 
 resource "local_file" "private_key_file" {
+
+  // This cannot be a good idea?
+  // deactivating for now() by setting count = 0 
+  count = 0
+
   filename = "${path.module}/config/ssh-key"
   content  = base64decode(data.oci_secrets_secretbundle.sshkey.secret_bundle_content[0]["content"])
 }
