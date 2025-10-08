@@ -14,3 +14,8 @@ output "ssh_public_key" {
   value = data.tls_public_key.ssh_public_key.public_key_openssh
   sensitive = true
 }
+
+# Show ips for next level module that will do config
+output "ip_addresses" {
+  value = module.db.db_private_ips
+}

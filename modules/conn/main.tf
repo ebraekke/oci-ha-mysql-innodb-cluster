@@ -1,21 +1,16 @@
 
 resource "oci_database_tools_database_tools_connection" "mysql_connection" {
+
+    count = var.this_count
+
     compartment_id  = var.compartment_ocid
-    display_name    = var.connection_name
+
+    display_name    = "${var.connection_base_name}${count.index+1}"
     type = "MYSQL"
 
-    connection_string = "mysql://${var.mysql_ipaddress}:${var.mysql_port}"
+    connection_string = "mysql://${var.mysql_ipaddress_list[count.index]}:${var.mysql_port}"
     
     private_endpoint_id = var.priv_endpoint_ocid
-
-/* 
-Not needed remove later
-
-    related_resource {
-        entity_type = "MYSQLDBSYSTEM"
-        identifier  = var.mysql_db_ocid
-    }
-*/
 
     user_name = var.db_user_name
     user_password {

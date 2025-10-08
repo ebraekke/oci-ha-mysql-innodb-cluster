@@ -31,30 +31,31 @@ module "app" {
 */
 
 module "db" {
-    source              = "./modules/db"
+    source                  = "./modules/db"
 
-    instance_count      = var.db_count
-    compartment_ocid    = var.compartment_ocid
-    ssh_public_key      = data.tls_public_key.ssh_public_key.public_key_openssh
-    user_data_base64    = local.user_data_base64_standard
-    shape               = var.default_shape
-    ocpus               = var.db_ocpus
-    memory_in_gbs       = var.db_mem_per_ocpu * var.db_ocpus
-    avadom_name         = local.avadom_name
-    faldom_list         = local.faldom_list
-    faldom_count        = local.faldom_count
-    subnet_ocid         = var.db_subnet_ocid
-    image_ocid          = var.db_image_ocid_map[var.region]
+    instance_count          = var.db_count
+    compartment_ocid        = var.compartment_ocid
+    ssh_public_key          = data.tls_public_key.ssh_public_key.public_key_openssh
+    user_data_base64        = local.user_data_base64_standard
+    shape                   = var.default_shape
+    ocpus                   = var.db_ocpus
+    memory_in_gbs           = var.db_mem_per_ocpu * var.db_ocpus
+    avadom_name             = local.avadom_name
+    faldom_list             = local.faldom_list
+    faldom_count            = local.faldom_count
+    subnet_ocid             = var.db_subnet_ocid
+    image_ocid              = var.db_image_ocid_map[var.region]
 }
 
 module "conn" {
-    source              = "./modules/conn"
+    source                  = "./modules/conn"
 
-    compartment_ocid	= var.compartment_ocid
-    connection_name		= "dev-testmysqlconn"
-    db_user_name		= "root"
-    db_password_ocid	= var.password_ocid
-    mysql_ipaddress		= module.db.db_private_ips[0]
-    mysql_port		    = 3306
-    priv_endpoint_ocid 	= var.priv_endpoint_ocid
+    this_count              = length(module.db.db_private_ips) 
+    compartment_ocid	    = var.compartment_ocid
+    connection_base_name    = "dev-testmysqlconn-"
+    db_user_name		    = "admin"
+    db_password_ocid	    = var.password_ocid
+    mysql_ipaddress_list	= module.db.db_private_ips
+    mysql_port		        = 3306
+    priv_endpoint_ocid 	    = var.priv_endpoint_ocid
 }
