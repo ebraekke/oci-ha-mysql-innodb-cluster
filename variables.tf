@@ -20,10 +20,6 @@ variable "app_subnet_ocid"          {
     description = "ocid of (private) subnet to host App tier"
 }
 
-variable "bastion_subnet_ocid"          {
-    description = "ocid of (public) subnet to locate resource manager private ip endpoint"
-}
-
 variable "vault_ocid" {
     description = "ocid of vault"
 }
@@ -40,10 +36,6 @@ variable "password_ocid" {
 variable "sshkey_ocid" {
     description = "ocid of sshkey for VMs in vault"
 } 
-
-variable "priv_endpoint_ocid" {
-    description = "ocid of private endpoint in \"vcn_ocid\" to be used by new connection"
-}
 
 ###########################################################################
 # Resource counts and shape
@@ -64,21 +56,23 @@ variable "default_shape"    {
 # Set to your pref depending on OS, assumes same OS family (i.e. opc or ubuntu) 
 variable "super_user"       { default = "opc" }
 
+# tried but did not work properly, abondoning
+# Canonical-Ubuntu-24.04-2025.09.22-0
+# eu-frankfurt-1 = "ocid1.image.oc1.eu-frankfurt-1.aaaaaaaaomylr6kmnysurndo37lzq2x2q5teoyoa3oaruqrzfnnb7h5k45hq"
+
 variable "db_image_ocid_map" {
-  # 8.8
+  # Oracle-Linux-10.0-2025.09.16-0                         
   type = map
   default = {
-    eu-frankfurt-1 = "ocid1.image.oc1.eu-frankfurt-1.aaaaaaaaxcekctvkxslfbfeojkawkejwep5skeqzvle7nbjekvctt4jetcua"
-    eu-stockholm-1 = "ocid1.image.oc1.eu-stockholm-1.aaaaaaaamanmmaerrmxfh45euvqgh5zqfmkxceffueeowcjmaxxmnwylv2iq"
+    eu-frankfurt-1 = "ocid1.image.oc1.eu-frankfurt-1.aaaaaaaajovmusdfe7lkfsv3fzzn44ac7t35htmzzmnyaawdl4yznw3xdpfa"
   }
 }
 
 variable "app_image_ocid_map" {
-  # 7.9
+  # Oracle-Linux-10.0-2025.09.16-0                                      
   type = map
   default = {
-    eu-frankfurt-1 = "ocid1.image.oc1.eu-frankfurt-1.aaaaaaaa334274wxgfcpoptphpte6f3xqbhyqz2db4b57ddar6b4m5kwoxga"
-    eu-stockholm-1 = "ocid1.image.oc1.eu-stockholm-1.aaaaaaaa5td46b4l7bghw45dnleto7jhu4nksmz6yffq45wo6xqwg5mgc6ja"
+    eu-frankfurt-1 = "ocid1.image.oc1.eu-frankfurt-1.aaaaaaaajovmusdfe7lkfsv3fzzn44ac7t35htmzzmnyaawdl4yznw3xdpfa"
   }
 }
 
