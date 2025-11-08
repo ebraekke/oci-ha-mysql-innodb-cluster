@@ -1,13 +1,5 @@
 
 /*
-module "rm" {
-    source              = "./modules/rm"
-
-    compartment_ocid    = var.compartment_ocid
-    vcn_ocid            = var.vcn_ocid
-    subnet_ocid         = var.bastion_subnet_ocid
-    display_name        = "HA InnoDB RM Private endpoint"
-}
 
 module "app" {
     source              = "./modules/app"
@@ -29,6 +21,23 @@ module "app" {
     sshkey_file         = "${path.module}/config/ssh-key"
 }
 */
+
+module "app" {
+    source                  = "./modules/bastion"
+
+    instance_count          = 1
+    compartment_ocid        = var.compartment_ocid
+    ssh_public_key          = data.tls_public_key.ssh_public_key.public_key_openssh
+    user_data_base64        = local.user_data_base64_standard
+    shape                   = var.default_shape
+    ocpus                   = 1
+    memory_in_gbs           = 8
+    avadom_name             = local.avadom_name
+    faldom_list             = local.faldom_list
+    faldom_count            = local.faldom_count
+    subnet_ocid             = var.bastion_subnet_ocid
+    image_ocid              = var.app_image_ocid_map[var.region]
+}
 
 module "db" {
     source                  = "./modules/db"

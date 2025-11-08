@@ -20,6 +20,10 @@ variable "app_subnet_ocid"          {
     description = "ocid of (private) subnet to host App tier"
 }
 
+variable "bastion_subnet_ocid"  {
+    description = "ocid of (public) subnet for bastion host"
+}
+
 variable "vault_ocid" {
     description = "ocid of vault"
 }
