@@ -23,6 +23,9 @@ oci compute image list -c $C --all --query 'data[*].{Name:"display-name",OCID:id
 | Oracle-Linux-8.8-2023.08.31-0   | ocid1.image.oc1.eu-frankfurt-1.aaaaaaaapbmaii43g6f7aewzhubzhdrq5tl3xspw7wzwfgjn5zb7mbzoge4a |
 | Oracle-Linux-7.9-2023.08.31-0   | ocid1.image.oc1.eu-frankfurt-1.aaaaaaaazo5x3eg2yzwmdbuxcuftnkx47oirq3ruxux2lmspzok3j45flsrq |
 +---------------------------------+---------------------------------------------------------------------------------------------+
+
+| Oracle-Linux-10.0-2025.09.16-0  | ocid1.image.oc1.eu-frankfurt-1.aaaaaaaajovmusdfe7lkfsv3fzzn44ac7t35htmzzmnyaawdl4yznw3xdpfa |
+
 ```
 
 ## Read config files to create Bastion Sessions 

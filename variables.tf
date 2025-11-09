@@ -61,23 +61,21 @@ variable "default_shape"    {
 variable "super_user"       { default = "opc" }
 
 # tried but did not work properly, abondoning
-# Canonical-Ubuntu-24.04-2025.09.22-0
-# eu-frankfurt-1 = "ocid1.image.oc1.eu-frankfurt-1.aaaaaaaaomylr6kmnysurndo37lzq2x2q5teoyoa3oaruqrzfnnb7h5k45hq"
 
 variable "db_image_ocid_map" {
-  # Oracle-Linux-10.0-2025.09.16-0                         
-  type = map
-  default = {
-    eu-frankfurt-1 = "ocid1.image.oc1.eu-frankfurt-1.aaaaaaaajovmusdfe7lkfsv3fzzn44ac7t35htmzzmnyaawdl4yznw3xdpfa"
-  }
+    # Oracle-Linux-10.0-2025.09.16-0 
+    type = map
+    default = {
+        eu-frankfurt-1 = "ocid1.image.oc1.eu-frankfurt-1.aaaaaaaajovmusdfe7lkfsv3fzzn44ac7t35htmzzmnyaawdl4yznw3xdpfa"
+    }
 }
 
 variable "app_image_ocid_map" {
-  # Oracle-Linux-10.0-2025.09.16-0                                      
-  type = map
-  default = {
-    eu-frankfurt-1 = "ocid1.image.oc1.eu-frankfurt-1.aaaaaaaajovmusdfe7lkfsv3fzzn44ac7t35htmzzmnyaawdl4yznw3xdpfa"
-  }
+    # Canonical-Ubuntu-24.04-2025.09.22-0
+    type = map
+    default = {
+        eu-frankfurt-1 = "ocid1.image.oc1.eu-frankfurt-1.aaaaaaaaomylr6kmnysurndo37lzq2x2q5teoyoa3oaruqrzfnnb7h5k45hq"
+    }
 }
 
 

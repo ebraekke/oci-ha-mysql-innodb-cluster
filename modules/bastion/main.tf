@@ -1,5 +1,5 @@
 
-resource "oci_core_instance" "instance_db" {
+resource "oci_core_instance" "instance_bastion" {
   count               = var.instance_count
 
   availability_domain = var.avadom_name

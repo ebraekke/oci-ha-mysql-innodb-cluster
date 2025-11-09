@@ -22,10 +22,10 @@ module "app" {
 }
 */
 
-module "app" {
+module "bastion" {
     source                  = "./modules/bastion"
 
-    instance_count          = 1
+    instance_count          = 0
     compartment_ocid        = var.compartment_ocid
     ssh_public_key          = data.tls_public_key.ssh_public_key.public_key_openssh
     user_data_base64        = local.user_data_base64_standard

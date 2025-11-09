@@ -16,12 +16,7 @@ output "ssh_public_key" {
 }
 
 # Show ips for next level module that will do config
-output "db_ip_addresses" {
+output "db_ips" {
   value = module.db.db_private_ips
-}
-
-# Show ips for next level module that will do config
-output "db_ocids" {
-  value = module.db.db_ocid_list
 }
 
