@@ -3,6 +3,8 @@
 locals {
   user_data_base64_standard = filebase64("${path.module}/templates/standard.tpl")
 
+#  user_data_base64_bastion = filebase64("${path.module}/templates/standard.tpl")
+
   # not used for now, but can be used for distribution across ads
   avadom_list  = data.oci_identity_availability_domains.ads.availability_domains
   avadom_count = length(local.avadom_list)

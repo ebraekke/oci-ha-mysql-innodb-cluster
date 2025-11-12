@@ -1,3 +1,31 @@
+## Available images
+
+```
+| Oracle-Linux-9.6-aarch64-2025.10.23-0                 | ocid1.image.oc1.eu-frankfurt-1.aaaaaaaajhocvizgu5klrtuyan37c673t5x2b34fs45x3ojxen7c4oo2nrbq |
+| Oracle-Linux-9.6-aarch64-2025.09.16-0                 | ocid1.image.oc1.eu-frankfurt-1.aaaaaaaalrgdrwmkpxxin7n63n6wv24dwafh444hh4az2wsq5czqli7ik6xq |
+| Oracle-Linux-9.6-aarch64-2025.08.31-0                 | ocid1.image.oc1.eu-frankfurt-1.aaaaaaaaa33o54javaysebvmgwgcjzkwqj6iniljplyv2bo55dnlqo5csj3q |
+| Oracle-Linux-8.10-aarch64-2025.10.23-0                | ocid1.image.oc1.eu-frankfurt-1.aaaaaaaa5l2ht46sdih2j2vrtugeqmi5opn45ostngzhe4z5rtdct7zcbmta |
+| Oracle-Linux-8.10-aarch64-2025.09.16-0                | ocid1.image.oc1.eu-frankfurt-1.aaaaaaaapbp4hdlf6xlfhzhc43ebgapapkhxafrk3b2agy3klskbsjq2x7oa |
+| Oracle-Linux-8.10-aarch64-2025.08.31-0                | ocid1.image.oc1.eu-frankfurt-1.aaaaaaaas6szggxbmvcu6s7i3li5jialqoqsaox2f52vywbuyk5zhfsqvbga |
+| Oracle-Linux-8.10-Gen2-GPU-2025.08.31-0               | ocid1.image.oc1.eu-frankfurt-1.aaaaaaaarbsqnsvucj366yn36ttbdjxs3pdg6vgviauw7vr7uofyx7bw7lza |
+
+
+| Canonical-Ubuntu-24.04-aarch64-2025.09.26-0           | ocid1.image.oc1.eu-frankfurt-1.aaaaaaaawztrbuytfb3ko5qmyxo2omftxd63gq6rpgc43appmifmmdc5eq5q |
+| Canonical-Ubuntu-24.04-aarch64-2025.07.23-0           | ocid1.image.oc1.eu-frankfurt-1.aaaaaaaanqexajytbn3qi2gn4i4c3ryo4afgtekjgslovyqxnkrpr56xtfka |
+| Canonical-Ubuntu-24.04-aarch64-2025.05.20-0           | ocid1.image.oc1.eu-frankfurt-1.aaaaaaaaxhdnngoowpuvwonng4mr2brdemk5wvmompn6ykmohmfuqmwvagjq |
+| Canonical-Ubuntu-24.04-Minimal-aarch64-2025.09.22-0   | ocid1.image.oc1.eu-frankfurt-1.aaaaaaaafb2sye3yjqkh3ejoeindkf2jgbgo2cciffs6sbwnpbgvclz6q5zq |
+| Canonical-Ubuntu-24.04-Minimal-aarch64-2025.07.23-0   | ocid1.image.oc1.eu-frankfurt-1.aaaaaaaaqnd47pb5voquvoszcyk3fj4n5tytijwvcflpwhnao77ffijjncgq |
+| Canonical-Ubuntu-24.04-Minimal-aarch64-2025.05.20-0   | ocid1.image.oc1.eu-frankfurt-1.aaaaaaaaa6y7yd2njc7ezdngpeippyod2ncrfajgpglikjs5r6vgm3qoobua |
+| Canonical-Ubuntu-22.04-aarch64-2025.09.26-0           | ocid1.image.oc1.eu-frankfurt-1.aaaaaaaaflw32yjwdkwmqxic5mn4z5iriv4kgdadjqwmotx5z67tm2wzcwaa |
+| Canonical-Ubuntu-22.04-aarch64-2025.07.24-0           | ocid1.image.oc1.eu-frankfurt-1.aaaaaaaaww5bbjvzql4bvtt3nrok7v2k6atg55ldvgffg36jqdd4wc7ecssa |
+| Canonical-Ubuntu-22.04-aarch64-2025.05.20-0           | ocid1.image.oc1.eu-frankfurt-1.aaaaaaaatexnxf5zopnp2xlaya6e4twunsfuupi3rfhuh2jtjzrax5q5bwuq |
+| Canonical-Ubuntu-22.04-Minimal-aarch64-2025.09.22-0   | ocid1.image.oc1.eu-frankfurt-1.aaaaaaaakmukoot6oky72sq5mkzzwom423ycrkkchl6tudoj5vv5cae3mbba |
+| Canonical-Ubuntu-22.04-Minimal-aarch64-2025.07.23-0   | ocid1.image.oc1.eu-frankfurt-1.aaaaaaaa4y4ibex6wtagiokpbyqin6kied6uuviqcn35cevhc7r6263wjboa |
+| Canonical-Ubuntu-22.04-Minimal-aarch64-2025.05.20-0   | ocid1.image.oc1.eu-frankfurt-1.aaaaaaaap6feqvhc25exuerg6ti5gc3y6g47xrjss7zgwtrt3xg42gw7t4pq |
+| Canonical-Ubuntu-20.04-aarch64-2025.07.23-0           | ocid1.image.oc1.eu-frankfurt-1.aaaaaaaafmmsrqjzb6dql6i6by4ddi4ughbvir5gbrhbkfsdpdmie5i27tka |
+| Canonical-Ubuntu-20.04-aarch64-2025.05.20-0           | ocid1.image.oc1.eu-frankfurt-1.aaaaaaaa6onfuzoz3tic3jlebkm5ekfq3x2pmudw6oojirwucpxxcd7o7qpa |
+| Canonical-Ubuntu-20.04-aarch64-2025.03.28-0           | ocid1.image.oc1.eu-frankfurt-1.aaaaaaaahxy64vzstrzpcr6aehqucw3354fxmokipfxm53gnngofzjscp2ia |
+```
 
 ## How to do this in ansible 
 

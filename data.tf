@@ -25,16 +25,14 @@ data "tls_public_key" "ssh_public_key" {
   private_key_openssh = base64decode(data.oci_secrets_secretbundle.sshkey.secret_bundle_content[0]["content"])
 }
 
-
 /*
-# Create ssh config file
-data "template_file" "ssh_config" {
-  template = file("${path.module}/templates/ssh_config.tpl")
+# Create bastion user_data with clouf-inmit
+data "template_file" "bastion_user_data" {
+  template = file("${path.module}/templates/bastion.tpl")
   vars = {
-    private_key_path       = pathexpand(local_file.private_key_file.filename)
-    destination_ssh_user   = "${var.super_user}"
-    destination_hostname   = "${module.app.app_hostname_labels[0]}"
-    destination_private_ip = "${module.app.app_private_ips[0]}"
+    jump_iuser          = "jump"
+    jump_key            = "xyz"
+    super_user          = var.super_user
   }
 }
 */

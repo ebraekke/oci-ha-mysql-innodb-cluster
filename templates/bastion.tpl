@@ -1,21 +1,16 @@
 #cloud-config
-
-package_upgrade: true
-
-packages:
-  - python
-  - python3
+# this is specifically for Ubuntu 
+package_upgrade: false
 
 users:
-  # Works on Ubuntu 18.04 and higher
-  # User is *not* sudo even if the banner is displayed 
-  - name: jump    
-    ssh-authorized-keys:
-%{ for jump_key in ssh_jump_keys ~}      
-    - ${jump_key}
-%{ endfor ~}   
+  - name: ${jump_user}    
     shell: /bin/false
+    ssh-authorized-keys:
+      - ${jump_key}
 
 runcmd:
-  - /usr/bin/timedatectl set-timezone Europe/Oslo
-  - /sbin/userdel -f -r ${super_user}
+  - [touch, /tmp/cloud-init-begin]
+  - [sed, -i,'s/PermitRootLogin.*/PermitRootLogin no/g',/etc/ssh/sshd_config]
+  - [userdel, -f, -r, ${super_user}]
+  - [systemctl, restart, ssh]
+  - [touch, /tmp/cloud-init-done]

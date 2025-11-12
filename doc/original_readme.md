@@ -24,7 +24,17 @@ oci compute image list -c $C --all --query 'data[*].{Name:"display-name",OCID:id
 | Oracle-Linux-7.9-2023.08.31-0   | ocid1.image.oc1.eu-frankfurt-1.aaaaaaaazo5x3eg2yzwmdbuxcuftnkx47oirq3ruxux2lmspzok3j45flsrq |
 +---------------------------------+---------------------------------------------------------------------------------------------+
 
+| Oracle-Linux-8.10-2025.10.23-0  | ocid1.image.oc1.eu-frankfurt-1.aaaaaaaakjvbifnkpz5annjgb74ax7sdlguciylnt4yqas4ncjdiu7fzllpa |
+
 | Oracle-Linux-10.0-2025.09.16-0  | ocid1.image.oc1.eu-frankfurt-1.aaaaaaaajovmusdfe7lkfsv3fzzn44ac7t35htmzzmnyaawdl4yznw3xdpfa |
+
+| Oracle-Linux-9.6-aarch64-2025.10.23-0               | ocid1.image.oc1.eu-frankfurt-1.aaaaaaaajhocvizgu5klrtuyan37c673t5x2b34fs45x3ojxen7c4oo2nrbq |
+| Oracle-Linux-8.10-aarch64-2025.10.23-0              | ocid1.image.oc1.eu-frankfurt-1.aaaaaaaa5l2ht46sdih2j2vrtugeqmi5opn45ostngzhe4z5rtdct7zcbmta |
+| Canonical-Ubuntu-24.04-aarch64-2025.10.31-0         | ocid1.image.oc1.eu-frankfurt-1.aaaaaaaakzxxzn5xxewosaxvv5xcptfuvobpg46cgxolvtqox54bzwzdkima |
+| Canonical-Ubuntu-24.04-Minimal-aarch64-2025.10.31-0 | ocid1.image.oc1.eu-frankfurt-1.aaaaaaaajzudgoto32j5q245xjkm2p7nj6rrza2bb5yyqjgm56k4ib2to6sq |
+| Canonical-Ubuntu-22.04-aarch64-2025.10.31-0         | ocid1.image.oc1.eu-frankfurt-1.aaaaaaaab4imietimnkcafuesd47z6xzp3byqxflevxub5bonjlsiekopkjq |
+| Canonical-Ubuntu-22.04-Minimal-aarch64-2025.10.31-0 | ocid1.image.oc1.eu-frankfurt-1.aaaaaaaao3zgxdgzwgmstkzq2umtnuuqww65vn6af54tz2xelji76u5dlt7q |
+| Canonical-Ubuntu-20.04-aarch64-2025.03.28-0         | ocid1.image.oc1.eu-frankfurt-1.aaaaaaaahxy64vzstrzpcr6aehqucw3354fxmokipfxm53gnngofzjscp2ia |
 
 ```
 
