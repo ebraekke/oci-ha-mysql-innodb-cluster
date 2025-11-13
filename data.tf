@@ -26,7 +26,7 @@ data "tls_public_key" "ssh_public_key" {
 }
 
 /*
-# Create bastion user_data with clouf-inmit
+# Create bastion user_data with cloud-init
 data "template_file" "bastion_user_data" {
   template = file("${path.module}/templates/bastion.tpl")
   vars = {
