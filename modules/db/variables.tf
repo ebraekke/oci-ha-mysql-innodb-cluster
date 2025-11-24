@@ -1,5 +1,6 @@
 
 variable "instance_count"   {}
+variable "base_name"        { default = "db" }
 variable "compartment_ocid" {}
 variable "ssh_public_key"   {}
 variable "user_data_base64" {}

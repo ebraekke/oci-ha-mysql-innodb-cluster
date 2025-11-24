@@ -84,11 +84,20 @@ variable "super_user"       { default = "opc" }
 | Canonical-Ubuntu-22.04-aarch64-2025.10.31-0         | ocid1.image.oc1.eu-frankfurt-1.aaaaaaaab4imietimnkcafuesd47z6xzp3byqxflevxub5bonjlsiekopkjq |
 | Canonical-Ubuntu-22.04-Minimal-aarch64-2025.10.31-0 | ocid1.image.oc1.eu-frankfurt-1.aaaaaaaao3zgxdgzwgmstkzq2umtnuuqww65vn6af54tz2xelji76u5dlt7q |
 */
+
+/*
+Canonical-Ubuntu-22.04-aarch64-2025.10.31-0         
+        eu-frankfurt-1 = "ocid1.image.oc1.eu-frankfurt-1.aaaaaaaab4imietimnkcafuesd47z6xzp3byqxflevxub5bonjlsiekopkjq"
+
+Canonical-Ubuntu-22.04-Minimal-aarch64-2025.10.31-0
+        eu-frankfurt-1 = "ocid1.image.oc1.eu-frankfurt-1.aaaaaaaao3zgxdgzwgmstkzq2umtnuuqww65vn6af54tz2xelji76u5dlt7q"
+*/
+
 variable "db_image_ocid_map" {
     type = map
     default = {
         eu-frankfurt-1 = "ocid1.image.oc1.eu-frankfurt-1.aaaaaaaa5l2ht46sdih2j2vrtugeqmi5opn45ostngzhe4z5rtdct7zcbmta"
-    }
+     }
 }
 
 variable "app_image_ocid_map" {
