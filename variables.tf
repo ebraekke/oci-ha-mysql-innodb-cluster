@@ -4,6 +4,11 @@ variable "set_name" {
     description = "The name of or role of this set, used as base for naming, typicall test/dev/qa"
 }
 
+variable "deploy_to_zone" {
+    description = "AD to deploy to (1/2)"
+    default = "1"
+}
+
 variable "compartment_ocid"     {
     description = "ocid of compartment"
 }
@@ -49,8 +54,8 @@ variable "app_ocpus"        { default = "1" }
 variable "app_mem_per_ocpu" { default = "16" }
 
 variable "db_count"         { default = "3" }
-variable "db_ocpus"         { default = "1" }
-variable "db_mem_per_ocpu"  { default = "16" }
+variable "db_ocpus"         { default = "2" }
+variable "db_mem_per_ocpu"  { default = "32" }
 
 # Switch to:
 # VM.Standard.A1.Flex 

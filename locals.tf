@@ -3,16 +3,10 @@
 locals {
   user_data_base64_standard = filebase64("${path.module}/templates/standard.tpl")
 
-#  user_data_base64_bastion = filebase64("${path.module}/templates/standard.tpl")
+  # Use this domain (zone)
+  avadom_name = data.oci_identity_availability_domain.ad.name
 
-  # not used for now, but can be used for distribution across ads
-  avadom_list  = data.oci_identity_availability_domains.ads.availability_domains
-  avadom_count = length(local.avadom_list)
-
-  # primary domain == ad1
-  avadom_name  =  data.oci_identity_availability_domain.ad1.name 
-
-  # fault domains for ad1
-  faldom_list  = data.oci_identity_fault_domains.ad1_fds.fault_domains
+  # fault domains for chosen AD (zone)
+  faldom_list  = data.oci_identity_fault_domains.ad_fds.fault_domains
   faldom_count = length(local.faldom_list)
 }

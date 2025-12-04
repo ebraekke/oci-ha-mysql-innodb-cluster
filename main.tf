@@ -26,7 +26,7 @@ module "db" {
     source                  = "./modules/db"
 
     instance_count          = var.db_count
-    base_name               = "db-az1-"
+    base_name               = "db-az${var.deploy_to_zone}-"
     compartment_ocid        = var.compartment_ocid
     ssh_public_key          = data.tls_public_key.ssh_public_key.public_key_openssh
     user_data_base64        = local.user_data_base64_standard

@@ -15,7 +15,7 @@ resource "oci_core_instance" "instance_db" {
     ocpus         = var.ocpus
   }
 
-  display_name        = "db${count.index+1}"
+  display_name        = "${var.base_name}${count.index + 1}"
 
   source_details {
     source_type = "image"
@@ -29,7 +29,7 @@ resource "oci_core_instance" "instance_db" {
 
  create_vnic_details {
     subnet_id           = var.subnet_ocid
-    hostname_label      = "db${count.index+1}"
+    hostname_label      = "${var.base_name}${count.index + 1}"
     assign_public_ip    = false
   }
 
